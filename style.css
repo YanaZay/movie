@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f3f5;
+    margin: 0;
+}
+
+header {
+    background-color: #5b5d68;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.movie {
+    background-image: url("https://image.tmdb.org/t/p/w342/9dKCd55IuTT5QRs989m9Qlb7d2B.jpg");
+    border-radius: 3px;
+    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+
