@@ -12,12 +12,36 @@ async function getMovies() {
         const movieElem = document.createElement('div');
         movieElem.classList = 'movie';
         movieElem.style.backgroundImage = `url(${IMGPATH + movie.poster_path})`;
+        MOVIE__CONTAINER.insertAdjacentElement('beforeend', movieElem);
 
-        MOVIE__CONTAINER.insertAdjacentElement('beforeend', movieElem)
+        // const movieTitle = document.createElement('div');
+        // movieTitle.className = 'movie:hover';
+        // movieTitle.innerHTML = movie.original_title;
+        // movieTitle.style.display = 'none';
+        // movieElem.insertAdjacentElement('beforeend', movieTitle);
+
     })
-    console.log(respData)
 
     return respData;
 }
 getMovies()
+
+MOVIE__CONTAINER.addEventListener('mouseover', (event) => {
+    if (!event.target.classList.contains('movie__container')) {
+        for (let i = 0; i < MOVIE__CONTAINER.children.length; i++) {
+            const currentElem = event.target;
+            currentElem.style.opacity = 0.5;
+        }
+    }
+
+})
+
+MOVIE__CONTAINER.addEventListener('mouseout', (event) => {
+    if (!event.target.classList.contains('movie__container')) {
+        for (let i = 0; i < MOVIE__CONTAINER.children.length; i++) {
+            const currentElem = event.target;
+            currentElem.style.opacity = 1;
+        }
+    }
+})
 
