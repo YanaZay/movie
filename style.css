@@ -16,10 +16,25 @@ header {
     padding: 0 20px;
 }
 
+.main__title {
+    padding-left: 20px;
+    font-family: Arial, sans-serif;
+    color: #5b5d68;
+}
+
+.movie__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .movie {
-    background-image: url("https://image.tmdb.org/t/p/w342/9dKCd55IuTT5QRs989m9Qlb7d2B.jpg");
+    background: center / cover no-repeat;
+    width: 350px;
+    height: 450px;
     border-radius: 3px;
-    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 
