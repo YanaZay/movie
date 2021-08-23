@@ -1,7 +1,9 @@
 const APIURL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c';
 const IMGPATH = 'https://image.tmdb.org/t/p/w342';
+const LOGO = document.querySelector('.logo');
 const MAIN = document.querySelector('.main');
 const MOVIES = document.querySelector('.movies');
+const MAIN_TITLE = document.querySelector('.main__title');
 const MOVIE__CONTAINER = document.querySelector('.movie__container');
 let ALL__MOVIES;
 
@@ -48,18 +50,15 @@ MOVIE__CONTAINER.addEventListener('mouseout', (event) => {
 MOVIES.addEventListener('click', (event) => {
     if (!event.target.classList.contains('movie__container') && !event.target.classList.contains('main__title')) {
         const currentId = +event.target.id;
-        console.log(currentId)
 
         MOVIES.style.display = 'none';
 
         const currentMovie = ALL__MOVIES.results.find(movie => movie.id === currentId);
         console.log(currentMovie)
 
-        MAIN.style.backgroundImage = `url(${IMGPATH + currentMovie.backdrop_path})`;
         MAIN.innerHTML = `
+            <div class="current__back" style="background-image: url(${IMGPATH + currentMovie.backdrop_path})"></div>
             <div class="current__movie">
-<!--                <div class="current__back" style="background-image: url('${IMGPATH + currentMovie.backdrop_path}')"></div>-->
-                
                 <div class="current__poster">
                     <img src= ${IMGPATH + currentMovie.poster_path} alt="">
                 </div>
@@ -71,11 +70,26 @@ MOVIES.addEventListener('click', (event) => {
                 </div>
             </div>
         `
-
     }
-
 })
 
+LOGO.addEventListener('click', () => {
+    MOVIES.style.display = 'block';
+
+    MAIN.innerHTML = '';
+    MOVIE__CONTAINER.innerHTML = '';
+    ALL__MOVIES.results.forEach( movie => {
+        const movieElem = document.createElement('div');
+        movieElem.classList = 'movie';
+        movieElem.id = movie.id;
+        movieElem.style.backgroundImage = `url(${IMGPATH + movie.poster_path})`;
+        MOVIE__CONTAINER.insertAdjacentElement('beforeend', movieElem);
+        MOVIES.insertAdjacentElement('beforeend', MOVIE__CONTAINER);
+        MAIN.insertAdjacentElement('beforeend', MOVIES)
+        MAIN.insertAdjacentElement('afterbegin', MAIN_TITLE)
+
+    })
+})
 
 
 

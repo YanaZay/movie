@@ -8,16 +8,22 @@ body {
 }
 
 header {
+    height: 55px;
     background-color: #5b5d68;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     color: #ffffff;
     padding: 0 20px;
+    align-items: center;
 }
 
 .logo {
     cursor: pointer;
+    margin: 0;
+}
+
+.logo > h1 {
+    margin: 0;
 }
 
 .sign__in {
@@ -25,7 +31,8 @@ header {
 }
 
 .main {
-    height: 888px;
+    position: relative;
+    height: 94vh;
     background: center / cover no-repeat;
 }
 
@@ -58,24 +65,30 @@ header {
 
 .current__movie {
     width: 900px;
-    height: 715px;
-    margin: 0 auto;
     display: flex;
     color: #ffffff;
     font-size: 18px;
     font-family: "Calibri", sans-serif;
     font-weight: 500;
     text-align: center;
+    position: absolute;
 
-    padding: 150px 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .current__back {
+    margin: 0;
     background: center / cover no-repeat;
+    height: 100%;
+    width: 100%;
+    filter: blur(3px);
+    opacity: 0.9;
 }
 
 .current__info {
-    padding: 40px;
+
 }
 
 .current__title {
