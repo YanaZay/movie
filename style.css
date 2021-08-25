@@ -57,9 +57,35 @@ header {
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     transition: all 0.3s ease-in-out;
-    position: relative;
     cursor: pointer;
+    position: relative;
 }
+
+.movie__info {
+    position: absolute;
+    background-color: #ffffff;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    letter-spacing: 1px;
+    padding: 1.5rem;
+
+    opacity: 0.9;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: all 0.3s ease-in-out ;
+}
+
+.movie__rating {
+    font-weight: bold;
+    background-color: #e3e3ef;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
 
 /* CURRENT */
 
@@ -85,10 +111,6 @@ header {
     width: 100%;
     filter: blur(3px);
     opacity: 0.9;
-}
-
-.current__info {
-
 }
 
 .current__title {
