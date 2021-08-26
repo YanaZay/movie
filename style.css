@@ -26,12 +26,49 @@ header {
     margin: 0;
 }
 
-.sign__in {
-    cursor: pointer;
+.account {
+    position: relative;
 }
 
+.account__button {
+    background-color: #5b5d68;
+    border: 1px solid #bbbdd3;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.account__button:hover {
+    background-color: #7984f5;
+}
+
+.favorite {
+    position: absolute;
+}
+
+.favorite__button {
+    background-color: #5b5d68;
+    border: 1px solid #bbbdd3;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: none;
+}
+
+.favorite__button:hover {
+    background-color: #7984f5;
+}
+
+/* MAIN */
 .main {
-    position: relative;
     height: 94vh;
     background: center / cover no-repeat;
 }
@@ -56,7 +93,6 @@ header {
     border-radius: 3px;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
-    transition: all 0.3s ease-in-out;
     cursor: pointer;
     position: relative;
 }
@@ -69,14 +105,11 @@ header {
     justify-content: space-evenly;
     letter-spacing: 1px;
     padding: 1.5rem;
-
     opacity: 0.9;
-
     top: 0;
     left: 0;
     right: 0;
-
-    transition: all 0.3s ease-in-out ;
+    transition: all 3s ease-in-out;
 }
 
 .movie__rating {
@@ -86,9 +119,7 @@ header {
     border-radius: 50px;
 }
 
-
 /* CURRENT */
-
 .current__movie {
     width: 900px;
     display: flex;

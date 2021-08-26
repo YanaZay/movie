@@ -7,7 +7,8 @@ const MAIN_TITLE = document.querySelector('.main__title');
 const MOVIE__CONTAINER = document.querySelector('.movie__container');
 let ALL__MOVIES;
 let MOVIE__INFO = [];
-console.log(MOVIE__CONTAINER)
+const ACCOUNT__BUTTON = document.querySelector('.account__button');
+const FAVORITE__BUTTON = document.querySelector('.favorite__button');
 
 async function getMovies() {
     const resp = await fetch(APIURL);
@@ -28,10 +29,7 @@ async function getMovies() {
         `
         MOVIE__INFO.push(movieElem.children[0])
     })
-
     ALL__MOVIES = respData;
-
-    console.log(MOVIE__INFO)
     return respData;
 }
 getMovies()
@@ -82,23 +80,25 @@ LOGO.addEventListener('click', () => {
         MOVIES.insertAdjacentElement('beforeend', MOVIE__CONTAINER);
         MAIN.insertAdjacentElement('beforeend', MOVIES)
         MAIN.insertAdjacentElement('afterbegin', MAIN_TITLE)
-
-
     })
 })
 
-
 MOVIE__CONTAINER.addEventListener('mouseover', (event) => {
-    if (event.target.children[0].classList.contains('movie__info')) {
-        event.target.children[0].style.display = 'flex'
+    if (event.target.classList.contains('movie')) {
+        event.target.children[0].style.display = 'flex';
     }
 })
 
-
 MOVIE__CONTAINER.addEventListener('mouseout', (event) => {
-    if (event.target.children[0].classList.contains('movie__info')) {
+    if (event.target.classList.contains('movie')) {
         event.target.children[0].style.display = 'none'
     }
+})
+
+ACCOUNT__BUTTON.addEventListener('click', () => {
+    if (FAVORITE__BUTTON.style.display === 'block') {
+        FAVORITE__BUTTON.style.display = 'none'
+    } else (FAVORITE__BUTTON.style.display = 'block')
 })
 
 
